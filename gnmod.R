@@ -83,5 +83,8 @@ for (i in 1:length(rownames( methodv2))) {
 	}
 }
 
+restab=restab[order(restab$Var1, decreasing = T),]
+rownames(restab)=c()
+xtable(restab, digits = 3,include.rownames=FALSE)
 
 

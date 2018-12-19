@@ -31,7 +31,7 @@ normalit<-function(m){
 }
 timedy=timedy %>%  mutate_each(funs(normalit), nkill, nwound, nperps, rmsloc)
 
-pdf("doc/plots/time.pdf", width = 6, height = 4)
+pdf("doc/plots/time.pdf", width = 6, height = 3)
 ggplot(melt(timedy%>% select(-nperps,-nwound) ,id="iyear")  , aes(x=iyear,  y=value, colour=variable))+
 	geom_line()
 
